@@ -8,7 +8,7 @@
 
 #import "EWAppDelegate.h"
 
-#import "AFNetworking.h"
+#import "EWLastMinuteApi.h"
 
 @implementation EWAppDelegate
 
