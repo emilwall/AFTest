@@ -27,6 +27,7 @@
 		AE3AFEB8171D51D0000D6F79 /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = AE3AFEAF171D51D0000D6F79 /* UIImageView+AFNetworking.m */; };
 		AE3AFEBA171D5288000D6F79 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE3AFEB9171D5288000D6F79 /* MobileCoreServices.framework */; };
 		AE3AFEBC171D5295000D6F79 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE3AFEBB171D5295000D6F79 /* SystemConfiguration.framework */; };
+		AE3AFEBF171D5A2A000D6F79 /* EWLastMinuteApi.m in Sources */ = {isa = PBXBuildFile; fileRef = AE3AFEBE171D5A2A000D6F79 /* EWLastMinuteApi.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +65,8 @@
 		AE3AFEAF171D51D0000D6F79 /* UIImageView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImageView+AFNetworking.m"; path = "Vendor/AFNetworking/AFNetworking/UIImageView+AFNetworking.m"; sourceTree = SOURCE_ROOT; };
 		AE3AFEB9171D5288000D6F79 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		AE3AFEBB171D5295000D6F79 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		AE3AFEBD171D5A2A000D6F79 /* EWLastMinuteApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EWLastMinuteApi.h; sourceTree = "<group>"; };
+		AE3AFEBE171D5A2A000D6F79 /* EWLastMinuteApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EWLastMinuteApi.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +117,7 @@
 		AE3AFE85171D4F01000D6F79 /* AFTest */ = {
 			isa = PBXGroup;
 			children = (
+				AE3AFEC0171D5A32000D6F79 /* Communication */,
 				AE3AFE8E171D4F01000D6F79 /* EWAppDelegate.h */,
 				AE3AFE8F171D4F01000D6F79 /* EWAppDelegate.m */,
 				AE3AFE9C171D51B4000D6F79 /* AFNetworking */,
@@ -160,6 +164,15 @@
 				AE3AFEAF171D51D0000D6F79 /* UIImageView+AFNetworking.m */,
 			);
 			name = AFNetworking;
+			sourceTree = "<group>";
+		};
+		AE3AFEC0171D5A32000D6F79 /* Communication */ = {
+			isa = PBXGroup;
+			children = (
+				AE3AFEBD171D5A2A000D6F79 /* EWLastMinuteApi.h */,
+				AE3AFEBE171D5A2A000D6F79 /* EWLastMinuteApi.m */,
+			);
+			name = Communication;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -239,6 +252,7 @@
 				AE3AFEB6171D51D0000D6F79 /* AFURLConnectionOperation.m in Sources */,
 				AE3AFEB7171D51D0000D6F79 /* AFXMLRequestOperation.m in Sources */,
 				AE3AFEB8171D51D0000D6F79 /* UIImageView+AFNetworking.m in Sources */,
+				AE3AFEBF171D5A2A000D6F79 /* EWLastMinuteApi.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
