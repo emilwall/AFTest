@@ -7,7 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "AFNetworking.h"
 
-@interface EWLastMinuteApi : NSObject
+@interface EWLastMinuteApi : AFHTTPClient
 
 @end
