@@ -24,19 +24,14 @@
 
 - (void)callApi:(NSString *)selector
 {
-    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@/%@/", @"http://travel-offers-api.apphb.com/", selector]];
-    NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url];
-
-    AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:urlRequest success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
-        for (NSDictionary *dict in JSON) {
+    [[EWLastMinuteApi sharedClient] getPath:selector parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        for (NSDictionary *dict in responseObject) {
             NSLog(@"%@ -> %@", [dict valueForKey:@"code"], [dict valueForKey:@"name"]);
         }
         NSLog(@"Success");
-    } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Fail");
     }];
-
-    [operation start];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application
