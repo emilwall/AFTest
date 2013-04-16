@@ -8,15 +8,35 @@
 
 #import "EWAppDelegate.h"
 
+#import "AFNetworking.h"
+
 @implementation EWAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    [self callApi:@"airports"];
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;
+}
+
+- (void)callApi:(NSString *)selector
+{
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@/%@/", @"http://travel-offers-api.apphb.com/", selector]];
+    NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url];
+
+    AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:urlRequest success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
+        for (NSDictionary *dict in JSON) {
+            NSLog(@"%@ -> %@", [dict valueForKey:@"code"], [dict valueForKey:@"name"]);
+        }
+        NSLog(@"Success");
+    } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
+        NSLog(@"Fail");
+    }];
+
+    [operation start];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application
